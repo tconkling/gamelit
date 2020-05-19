@@ -1,6 +1,6 @@
 {"frames": {
 
-"oryx_16bit_fantasy_world_60.png":
+"floor.png":
 {
 	"frame": {"x":1,"y":1,"w":24,"h":24},
 	"rotated": false,
@@ -8,7 +8,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
 	"sourceSize": {"w":24,"h":24}
 },
-"oryx_16bit_fantasy_world_62.png":
+"skull1.png":
 {
 	"frame": {"x":27,"y":1,"w":24,"h":24},
 	"rotated": false,
@@ -16,7 +16,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
 	"sourceSize": {"w":24,"h":24}
 },
-"oryx_16bit_fantasy_world_555.png":
+"skull2.png":
 {
 	"frame": {"x":53,"y":1,"w":24,"h":24},
 	"rotated": false,
@@ -24,7 +24,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
 	"sourceSize": {"w":24,"h":24}
 },
-"oryx_16bit_fantasy_world_612.png":
+"wall.png":
 {
 	"frame": {"x":79,"y":1,"w":24,"h":24},
 	"rotated": false,
@@ -33,7 +33,7 @@
 	"sourceSize": {"w":24,"h":24}
 }},
 "animations": {
-	"oryx_16bit_fantasy_world": ["oryx_16bit_fantasy_world_60.png","oryx_16bit_fantasy_world_62.png","oryx_16bit_fantasy_world_555.png","oryx_16bit_fantasy_world_612.png"]
+	"skull": ["skull1.png","skull2.png"]
 },
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",
@@ -42,6 +42,6 @@
 	"format": "RGBA8888",
 	"size": {"w":104,"h":26},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:d52a93ef1e7aed5a01595fa9178a0e82:d7c6314844b378a0abd0b58e66c707b2:729adc6043343cfda41c447ce8f464d6$"
+	"smartupdate": "$TexturePacker:SmartUpdate:2dd754118a46e07a76e1fc32468f4569:38b4d7a40cf79c96ec2d5de4411af9b2:729adc6043343cfda41c447ce8f464d6$"
 }
 }
