@@ -45,7 +45,7 @@ def get_tile(tiles: TileGrid, pos: Pos) -> Tile:
 	return row[pos.x]
 
 
-def set_tile(tiles: TileGrid, tile: Tile, pos: Pos) -> TileGrid:
+def set_tile(tiles: TileGrid, pos: Pos, tile: Tile) -> TileGrid:
 	"""Draw a tile into a TileGrid. Return the updated TileGrid."""
 	if tiles is None:
 		tiles = []
@@ -65,4 +65,7 @@ def set_tile(tiles: TileGrid, tile: Tile, pos: Pos) -> TileGrid:
 	row[pos.x] = tile
 
 	return tiles
+
+def clear_tile(tiles: TileGrid, pos: Pos) -> TileGrid:
+	set_tile(tiles, pos, None)
 

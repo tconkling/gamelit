@@ -9,7 +9,7 @@ from gamelit import GamelitComponent, set_tile, Pos, get_tile, TileGrid
 st.register_component("gamelit", GamelitComponent)
 
 # Hello!
-st.title("Gamelit Demo")
+st.title("⚔️ Gamelit Demo")
 
 st.markdown("""
 An example component that renders tiles and returns keyboard events.
@@ -24,6 +24,7 @@ game_state = SessionState.get(
 	player_facing="left",
 	room=None,
 	depth=1,
+	score=0,
 )
 
 # Tiles
@@ -50,17 +51,17 @@ def generate_room() -> TileGrid:
 	# Fill floors
 	for yy in range(0, ROOM_HEIGHT):
 		for xx in range(0, ROOM_WIDTH):
-			set_tile(tiles, FLOOR, Pos(xx, yy))
+			set_tile(tiles, Pos(xx, yy), FLOOR)
 
 	# Top/bottom walls
 	for yy in (0, ROOM_HEIGHT - 1):
 		for xx in range(0, ROOM_WIDTH):
-			set_tile(tiles, WALL, Pos(xx, yy))
+			set_tile(tiles, Pos(xx, yy), WALL)
 
 	# Left/right walls
 	for xx in (0, ROOM_WIDTH - 1):
 		for yy in range(0, ROOM_HEIGHT):
-			set_tile(tiles, WALL, Pos(xx, yy))
+			set_tile(tiles, Pos(xx, yy), WALL)
 
 	# Pick a spot for the stairs. Ensure it's not where the player is standing.
 	while True:
@@ -71,7 +72,7 @@ def generate_room() -> TileGrid:
 		if stairs_pos != game_state.player_pos:
 			break
 
-	set_tile(tiles, STAIRS, stairs_pos)
+	set_tile(tiles, stairs_pos, STAIRS)
 
 	return tiles
 
@@ -90,13 +91,14 @@ tile_layers.append({"layer": 1, "tiles": fg_tiles})
 
 # Add the player to the foreground
 player_tile = KNIGHT_LEFT if game_state.player_facing == "left" else KNIGHT_RIGHT
-set_tile(fg_tiles, player_tile, game_state.player_pos)
+set_tile(fg_tiles, game_state.player_pos, player_tile)
 
 # Update the game, and get the new keyboard state
 keys = st.gamelit("game", tile_layers)
 
 # Show stats
-st.markdown(f"## Dungeon Depth: {game_state.depth * 10} meters")
+st.markdown(f"**Depth**: {game_state.depth * 10} meters")
+st.markdown(f"**Score**: {game_state.score * 100} gold")
 
 # Process input. Move the player around with the arrow keys.
 new_pos = game_state.player_pos
