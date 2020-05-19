@@ -6,11 +6,15 @@ import "./streamlit.css"
 
 // Constants
 const TILE_SIZE = 24
+const KEY_NAMES = new Set<string>([
+	"ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown",
+])
 
 // Globals
 let spritesheet: PIXI.Spritesheet
 let tileLayerRoot = new PIXI.Container()
 let tileLayers = new Map<number, PIXI.Container>()
+let keyState: { [key: string]: boolean } = {}
 
 // Create a PIXI app
 PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST
@@ -25,6 +29,10 @@ PIXI.Loader.shared.add("spritesheet.json").load(onResourcesLoaded)
 function onResourcesLoaded () {
 	spritesheet = PIXI.Loader.shared.resources["spritesheet.json"].spritesheet!
 
+	// Install keyboard handlers
+	window.addEventListener("keydown", onKeyboardEvent, false)
+	window.addEventListener("keyup", onKeyboardEvent, false)
+
 	// Tell Streamlit we're ready to start receiving data. We won't get our
 	// first RENDER_EVENT until we call this function.
 	Streamlit.setComponentReady()
@@ -32,6 +40,31 @@ function onResourcesLoaded () {
 	// Finally, tell Streamlit to update our intiial height. We omit the
 	// `height` parameter here to have it default to our scrollHeight.
 	Streamlit.setFrameHeight()
+}
+
+// Handle keyboard events
+function onKeyboardEvent (e: KeyboardEvent): void {
+	if (e.type != "keydown" && e.type != "keyup") {
+		return
+	}
+
+	if (!KEY_NAMES.has(e.key)) {
+		return
+	}
+
+	const hasKey = e.key in keyState
+	let updated = false
+	if (e.type == "keydown" && !hasKey) {
+		keyState[e.key] = true
+		updated = true
+	} else if (e.type == "keyup" && hasKey) {
+		delete keyState[e.key]
+		updated = true
+	}
+
+	if (updated) {
+		Streamlit.setComponentValue(keyState)
+	}
 }
 
 /** Draw a tile grid. The grid, its rows, and individual cells can all be null. */

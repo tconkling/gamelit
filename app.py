@@ -1,5 +1,3 @@
-import time
-
 import streamlit as st
 
 from gamelit import GamelitComponent, draw_tile
@@ -30,9 +28,7 @@ bg_tiles = [
 fg_tiles = []
 draw_tile(fg_tiles, SKULL, 1, 1)
 
-st.gamelit(key="game", layers=[
+keys = st.gamelit(key="game", layers=[
 	{"layer": 0, "tiles": bg_tiles},
 	{"layer": 1, "tiles": fg_tiles},
 ])
-
-time.sleep(1)
