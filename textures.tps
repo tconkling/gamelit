@@ -161,7 +161,7 @@
             <key>scale</key>
             <double>1</double>
             <key>scaleMode</key>
-            <enum type="ScaleMode">Smooth</enum>
+            <enum type="ScaleMode">Fast</enum>
             <key>extrude</key>
             <uint>1</uint>
             <key>trimThreshold</key>
@@ -181,10 +181,10 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">spritesheet/oryx_16bit_fantasy_world_555.png</key>
-            <key type="filename">spritesheet/oryx_16bit_fantasy_world_60.png</key>
-            <key type="filename">spritesheet/oryx_16bit_fantasy_world_612.png</key>
-            <key type="filename">spritesheet/oryx_16bit_fantasy_world_62.png</key>
+            <key type="filename">spritesheet/floor.png</key>
+            <key type="filename">spritesheet/skull1.png</key>
+            <key type="filename">spritesheet/skull2.png</key>
+            <key type="filename">spritesheet/wall.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0,0</point_f>
