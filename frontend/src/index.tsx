@@ -63,6 +63,7 @@ function onKeyboardEvent (e: KeyboardEvent): void {
 	}
 
 	if (updated) {
+		e.preventDefault()
 		Streamlit.setComponentValue(keyState)
 	}
 }
