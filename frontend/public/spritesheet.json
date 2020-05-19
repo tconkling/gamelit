@@ -1,6 +1,6 @@
 {"frames": {
 
-"floor.png":
+"chest.png":
 {
 	"frame": {"x":1,"y":1,"w":24,"h":24},
 	"rotated": false,
@@ -8,7 +8,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
 	"sourceSize": {"w":24,"h":24}
 },
-"skull1.png":
+"floor.png":
 {
 	"frame": {"x":27,"y":1,"w":24,"h":24},
 	"rotated": false,
@@ -16,7 +16,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
 	"sourceSize": {"w":24,"h":24}
 },
-"skull2.png":
+"knight_left.png":
 {
 	"frame": {"x":53,"y":1,"w":24,"h":24},
 	"rotated": false,
@@ -24,9 +24,41 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
 	"sourceSize": {"w":24,"h":24}
 },
-"wall.png":
+"knight_right.png":
 {
 	"frame": {"x":79,"y":1,"w":24,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
+	"sourceSize": {"w":24,"h":24}
+},
+"skull1.png":
+{
+	"frame": {"x":105,"y":1,"w":24,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
+	"sourceSize": {"w":24,"h":24}
+},
+"skull2.png":
+{
+	"frame": {"x":131,"y":1,"w":24,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
+	"sourceSize": {"w":24,"h":24}
+},
+"stairs.png":
+{
+	"frame": {"x":157,"y":1,"w":24,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
+	"sourceSize": {"w":24,"h":24}
+},
+"wall.png":
+{
+	"frame": {"x":183,"y":1,"w":24,"h":24},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
@@ -40,8 +72,8 @@
 	"version": "1.0",
 	"image": "spritesheet.png",
 	"format": "RGBA8888",
-	"size": {"w":104,"h":26},
+	"size": {"w":208,"h":26},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:2dd754118a46e07a76e1fc32468f4569:38b4d7a40cf79c96ec2d5de4411af9b2:729adc6043343cfda41c447ce8f464d6$"
+	"smartupdate": "$TexturePacker:SmartUpdate:d157ff8d5a614639c9d405e6fb0a058b:8082ca5ace31635fd73690cf096a3a4d:729adc6043343cfda41c447ce8f464d6$"
 }
 }
