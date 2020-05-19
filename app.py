@@ -6,6 +6,10 @@ from gamelit import GamelitComponent, set_tile, Pos, get_tile
 # Register Gamelit
 st.register_component("gamelit", GamelitComponent)
 
+# Hello!
+st.title("Gamelit Demo")
+st.text("Controls: arrow keys to move")
+
 # Initialize state
 game_state = SessionState.get(
 	initialized=False,
