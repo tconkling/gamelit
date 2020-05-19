@@ -12,10 +12,11 @@ st.register_component("gamelit", GamelitComponent)
 st.title("⚔️ Gamelit Demo")
 
 st.markdown("""
-An example component that renders tiles and returns keyboard events.
+A super-simple tile-based game framework.
 
-It's a "dumb terminal": the Python script maintains game state,
-runs update logic, and tells the component to render new tiles.
+Gamelit is a "dumb terminal". All the game logic and state is maintained
+in the Streamlit app, which runs the game and tells the component to render
+new tiles.
 """)
 
 # Initialize state
