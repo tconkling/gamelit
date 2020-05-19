@@ -44,7 +44,7 @@ function onResourcesLoaded () {
 
 // Handle keyboard events
 function onKeyboardEvent (e: KeyboardEvent): void {
-	if (e.type != "keydown" && e.type != "keyup") {
+	if (e.type !== "keydown" && e.type !== "keyup") {
 		return
 	}
 
@@ -54,10 +54,10 @@ function onKeyboardEvent (e: KeyboardEvent): void {
 
 	const hasKey = e.key in keyState
 	let updated = false
-	if (e.type == "keydown" && !hasKey) {
+	if (e.type === "keydown" && !hasKey) {
 		keyState[e.key] = true
 		updated = true
-	} else if (e.type == "keyup" && hasKey) {
+	} else if (e.type === "keyup" && hasKey) {
 		delete keyState[e.key]
 		updated = true
 	}
