@@ -1,5 +1,8 @@
+import time
+
 import streamlit as st
-from gamelit import GamelitComponent
+
+from gamelit import GamelitComponent, draw_tile
 
 WALL = "wall.png"
 FLOOR = "floor.png"
@@ -7,33 +10,29 @@ SKULL = "skull1.png"
 
 st.register_component("gamelit", GamelitComponent)
 
-# Build background layer
-bg_layer = {
-	"layer": 0,
-	"tiles": [
-		[WALL] * 14,
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] + [FLOOR] * 12 + [WALL],
-		[WALL] * 14,
-	]
-}
+# Create static background layer
+bg_tiles = [
+	[WALL] * 14,
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] + [FLOOR] * 12 + [WALL],
+	[WALL] * 14,
+]
 
-skull_layer = {
-	"layer": 1,
-	"tiles": [
-		None,
-		None,
-		None,
-		[None, None, None, SKULL]
-	]
-}
+# Create empty foreground layer, and draw tiles into it
+fg_tiles = []
+draw_tile(fg_tiles, SKULL, 1, 1)
 
-st.gamelit(key="game", layers=[bg_layer, skull_layer])
+st.gamelit(key="game", layers=[
+	{"layer": 0, "tiles": bg_tiles},
+	{"layer": 1, "tiles": fg_tiles},
+])
+
+time.sleep(1)
