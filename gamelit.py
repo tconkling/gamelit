@@ -31,7 +31,21 @@ class Pos(NamedTuple):
 		return Pos(-self.x, -self.y)
 
 
-def draw_tile(tiles: TileGrid, tile: Tile, pos: Pos) -> TileGrid:
+def get_tile(tiles: TileGrid, pos: Pos) -> Tile:
+	"""Return the tile at the given position."""
+	if tiles is None:
+		return None
+	if pos.y < 0 or pos.y >= len(tiles):
+		return None
+
+	row = tiles[pos.y]
+	if pos.x < 0 or pos.x >= len(row):
+		return None
+
+	return row[pos.x]
+
+
+def set_tile(tiles: TileGrid, tile: Tile, pos: Pos) -> TileGrid:
 	"""Draw a tile into a TileGrid. Return the updated TileGrid."""
 	if tiles is None:
 		tiles = []
