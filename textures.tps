@@ -181,9 +181,13 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">spritesheet/chest.png</key>
             <key type="filename">spritesheet/floor.png</key>
+            <key type="filename">spritesheet/knight_left.png</key>
+            <key type="filename">spritesheet/knight_right.png</key>
             <key type="filename">spritesheet/skull1.png</key>
             <key type="filename">spritesheet/skull2.png</key>
+            <key type="filename">spritesheet/stairs.png</key>
             <key type="filename">spritesheet/wall.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>

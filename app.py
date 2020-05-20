@@ -50,6 +50,7 @@ DOWN = "ArrowDown"
 ROOM_WIDTH = 14
 ROOM_HEIGHT = 12
 
+
 def random_empty_tile(floor: TileGrid, objects: TileGrid) -> Pos:
 	height = len(floor)
 	width = len(floor[0])
@@ -60,6 +61,7 @@ def random_empty_tile(floor: TileGrid, objects: TileGrid) -> Pos:
 		)
 		if pos != game_state.player_pos and get_tile(floor, pos) == FLOOR and get_tile(objects, pos) is None:
 			return pos
+
 
 def generate_room() -> Tuple[TileGrid, TileGrid]:
 	floor = []
@@ -92,6 +94,7 @@ def generate_room() -> Tuple[TileGrid, TileGrid]:
 	set_tile(objects, game_state.player_pos, player_tile)
 
 	return floor, objects
+
 
 tile_layers = []
 
