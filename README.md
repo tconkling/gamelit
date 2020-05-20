@@ -1,5 +1,19 @@
 # gamelit
 
+Start the frontend:
+```
+$ cd frontend
+$ yarn install
+$ yarn start
+```
+
+Run the game:
+```
+$ python -m venv venv
+$ . venv/bin/activate
+$ pip install -r requirements.txt
+$ streamlit run app.py
+```
 
 ## Issues
 
