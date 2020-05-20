@@ -39,13 +39,13 @@ def get_tile(tiles: TileGrid, pos: Pos) -> Tile:
 		return None
 
 	row = tiles[pos.y]
-	if pos.x < 0 or pos.x >= len(row):
+	if row is None or pos.x < 0 or pos.x >= len(row):
 		return None
 
 	return row[pos.x]
 
 
-def set_tile(tiles: TileGrid, pos: Pos, tile: Tile) -> TileGrid:
+def set_tile(tiles: TileGrid, pos: Pos, tile: Tile) -> None:
 	"""Draw a tile into a TileGrid. Return the updated TileGrid."""
 	if tiles is None:
 		tiles = []
@@ -64,8 +64,13 @@ def set_tile(tiles: TileGrid, pos: Pos, tile: Tile) -> TileGrid:
 
 	row[pos.x] = tile
 
-	return tiles
 
-def clear_tile(tiles: TileGrid, pos: Pos) -> TileGrid:
+def move_tile(tiles: TileGrid, from_pos: Pos, to_pos: Pos) -> None:
+	"""Move a tile to a new position. Clear its previous position."""
+	set_tile(tiles, to_pos, get_tile(tiles, from_pos))
+	set_tile(tiles, from_pos, None)
+
+
+def clear_tile(tiles: TileGrid, pos: Pos) -> None:
 	set_tile(tiles, pos, None)
 
